@@ -1,4 +1,4 @@
-ARCHS := x86_64 arm aarch64 powerpc mips mipsel
+ARCHS := x86_64
 GDB_BFD_ARCHS := $(shell echo $(ARCHS) | awk '{for(i=1;i<=NF;i++) $$i=$$i"-linux"; print}' OFS=,)
 
 BASE_BUILD_TARGETS := $(addprefix build-, $(ARCHS))
