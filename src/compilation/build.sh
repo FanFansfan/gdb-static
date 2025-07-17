@@ -665,8 +665,8 @@ function build_gdb() {
                  --with-system-gdbinit="/etc/gdb/gdbinit" --with-system-gdbinit-dir="/etc/gdb/gdbinit.d" \
                  --with-jit-reader-dir="/usr/lib/gdb" \
                  --with-libiconv-prefix="$libiconv_prefix" --with-libiconv-type=static \
-                 --with-gmp="$libgmp_prefix" \
-                 --with-mpfr="$libmpfr_prefix" \
+                 --with-libgmp-prefix="$libgmp_prefix" --with-libgmp-type=static \
+                 --with-mpfr --with-libmpfr-prefix="$libmpfr_prefix" --with-libmpfr-type=static \
                  --enable-tui \
                  --with-expat --with-libexpat-type=static \
                  --with-lzma=yes --with-liblzma-prefix="$liblzma_prefix" --with-liblzma-type="static" \
