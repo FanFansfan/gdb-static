@@ -51,11 +51,11 @@ function set_compliation_variables() {
     export CC="${CROSS}gcc"
     export CXX="${CROSS}g++"
 
-    export CFLAGS="-Os"
-    export CXXFLAGS="-Os"
+    export CFLAGS="-Os -fPIC -U _FORTIFY_SOURCE"
+    export CXXFLAGS="-Os -fPIC -U _FORTIFY_SOURCE"
 
     # Strip the binary to reduce it's size.
-    export LDFLAGS="-s"
+    export LDFLAGS="-pie -static-pie -s"
 }
 
 function set_up_lib_search_path() {
@@ -503,7 +503,7 @@ function build_python() {
     export LINKFORSHARED=" "
     export MODULE_BUILDTYPE="static"
     export CONFIG_SITE="$python_dir/config.site-static"
-    >&2 CFLAGS="-static" LDFLAGS="-static" ../configure \
+    >&2 CFLAGS="-static -fPIC" LDFLAGS="-pie -static -static-pie" ../configure \
         --prefix="$(realpath .)" \
         --disable-test-modules \
         --with-ensurepip=no \
