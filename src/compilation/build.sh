@@ -667,6 +667,7 @@ function build_gdb() {
                  --with-libiconv-prefix="$libiconv_prefix" --with-libiconv-type=static \
                  --with-libgmp-prefix="$libgmp_prefix" --with-libgmp-type=static \
                  --with-mpfr --with-libmpfr-prefix="$libmpfr_prefix" --with-libmpfr-type=static \
+                 --enable-gprofng=no \
                  --enable-tui \
                  --with-expat --with-libexpat-type=static \
                  --with-lzma=yes --with-liblzma-prefix="$liblzma_prefix" --with-liblzma-type="static" \
